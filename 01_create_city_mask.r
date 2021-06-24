@@ -18,7 +18,7 @@ alats   = array(rep(lats,each=nlon),c(nlon,nlat))
 mask    = array(0, c(nlon,nlat))
 
 # create masks files; with +-ss grid cells around city
-for (ss in c(3)){
+for (ss in c(1)){
 
     # Cities
     # 1001 - Denver
