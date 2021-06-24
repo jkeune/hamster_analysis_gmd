@@ -14,16 +14,16 @@ library(sp)
 syyyy	= 1980
 eyyyy	= 2016
 expids	= c("RH-10-20","SOD08-SCH19","ALLPBL","FAS19","SCH20")
-cexpids = c("RH-20","SOD08","ALL-ABL","FAS19","")
-cexpidsh= c("RH-10","SCH19","ALL-ABL","","SCH20")
+cexpids = c("RH-20","SOD08","ALL-ABL","FAS19")
+cexpidsh= c("RH-10","SCH19","ALL-ABL","SCH20")
 imean 	= "mean"
 hthres	= 1
 mthres	= 0.1
 
 # Settings
-opath 	= "./figures"
-ipath 	= "./data/hamster/postpro/" 
-spath 	= "./data/hamster/staticdata/" 
+opath 	= "figures"
+ipath 	= "data/postpro/" 
+spath 	= "data/staticdata/" 
 
 # Functions
 source("functions/rotate.r")
@@ -46,7 +46,7 @@ nlat		= length(lat)
 alon		= array(rep(lon, nlat),c(nlon,nlat)) 
 alat		= array(rep(lat,each=nlon),c(nlon,nlat)) 
 # -- ERA-Interim land mask
-ifile = paste(spath,"/eafc_1x1.nc",sep="")
+ifile = paste(spath,"eafc_1x1.nc",sep="")
 ncfile= nc_open(ifile)
 olandmask = rotate(t(ncvar_get(ncfile,"var172")))
 landmask	= array(NA, dim(olandmask))
@@ -68,6 +68,7 @@ for (ivar in c("P","E","H")){
     if (ivar=="H"){ithresh=hthres}else{ithresh=mthres}
     if (ivar=="P" & expid!="ALLPBL"){next}
     if (ivar!="H" & expid=="SCH20"){next}
+    if (ivar=="H" & expid=="FAS19"){next}
     ifile = paste(ipath,"/validation/global/",ivar,"_",expid,"_daily_",syyyy,"-",eyyyy,"_all_thresh-",ithresh,".nc", sep="")
     valdata[[ivar]][[expid]] = readnc_validationmean(ifile, ret="data")
   }
@@ -78,6 +79,7 @@ for (ivar in c("P","E","H")){
   for (expid in expids){
     if (ivar=="P" & expid!="ALLPBL"){next}
     if (ivar!="H" & expid=="SCH20"){next}
+    if (ivar=="H" & expid=="FAS19"){next}
     # all land (ic=1)
     ic = 1
     cvaldata[[ivar]][[expid]][[cname[ic]]]= lapply(valdata[[ivar]][[expid]],FUN=mask2dfield,keep=1,mask=landmask)
@@ -157,7 +159,7 @@ boxplot_adv(cvaldata,
             mycols=hcols,#c(brewer.pal("Set1",n=5)[c(1,4)],brewer.pal("Set1",n=5)[c(5)],"grey70"),
             expids=expids,
             lexpids=cexpidsh,
-            iexpids=c(1,2,5,3),
+            iexpids=c(1,2,4,3),
             mtitle="c.",
             plotleg1=FALSE,
             plotleg2=TRUE,
