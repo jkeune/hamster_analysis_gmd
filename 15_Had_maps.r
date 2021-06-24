@@ -23,9 +23,9 @@ cities  = c(1001,3001,5002)
 rr      = 1.5 # grid box around city: +-1 (+0.5 for the grid cell)
 
 ## paths
-opath 	= "./figures"
-ipath 	= "./data/hamster/postpro/" 
-spath 	= "./data/hamster/staticdata/" 
+opath 	= "figures"
+ipath 	= "data/postpro/" 
+spath 	= "data/staticdata/" 
 
 # colors and breaks
 ccol    = "black"
@@ -76,7 +76,7 @@ areafile  = paste(spath,"/areas_1x1.nc",sep="")
 areas2d   = ncvar_get(nc_open(areafile),"area")
 
 # city mask
-citymaskf = paste(dpath,"/masks/mask_cities3x3.nc",sep="")
+citymaskf = paste("data/masks/mask_cities3x3.nc",sep="")
 citymask  = ncvar_get(nc_open(citymaskf),"mask")  
 
 ##----------------------------------------------------------------

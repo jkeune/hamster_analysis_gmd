@@ -24,10 +24,10 @@ vars    = c("Had","Had_Hs")
 rr      = 1.5 # grid box around city: +-1 (+0.5 for the grid cell)
 
 ## paths
-opath  	= "./figures"
-ipath 	= "./data/hamster/postpro/" 
-spath 	= "./data/hamster/staticdata/" 
-mpath 	= "./data/masks"
+opath  	= "figures"
+ipath 	= "data/postpro/" 
+spath 	= "data/staticdata/" 
+mpath 	= "data/masks/"
 
 # colors and breaks
 ccol    = "black"
