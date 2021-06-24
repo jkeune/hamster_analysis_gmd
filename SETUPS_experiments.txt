@@ -1,0 +1,6 @@
+expid cpbl_strict cpbl_method cpbl_factor cheat_dtemp fheat_drh cheat_drh fheat_rdq cheat_rdq cevap_dqv fevap_drh cevap_drh
+SOD08-SCH19 1 max 1 1 False 100 True 10 0.0002 False 100
+SCH20 1 max 1 1 False 100 False 100 0.0002 False 100
+FAS19 0 max 1 1 False 100 False 100 0.0001 False 100
+RH-10-20 1 max 1 0 True 10 False 100 0 True 20
+ALLPBL 1 max 1 0 False 100 False 100 0 False 100

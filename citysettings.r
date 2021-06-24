@@ -1,0 +1,16 @@
+gdata   = list()
+gdata[["1001"]]$cname="Denver"
+gdata[["1001"]]$clon=-105
+gdata[["1001"]]$clat=40
+gdata[["1001"]]$xrange=c(-160,-65)
+gdata[["1001"]]$yrange=c(10,60)
+gdata[["3001"]]$cname="Beijing"
+gdata[["3001"]]$clon=116
+gdata[["3001"]]$clat=40
+gdata[["3001"]]$xrange=c(70,145)
+gdata[["3001"]]$yrange=c(0,70)
+gdata[["5002"]]$cname="Windhoek"
+gdata[["5002"]]$clon=17
+gdata[["5002"]]$clat=-23
+gdata[["5002"]]$xrange=c(-10,75)
+gdata[["5002"]]$yrange=c(-50,5)
