@@ -89,7 +89,7 @@ for expid in ["ALLPBL","RH-10-20","SOD08-SCH19","FAS19","SCH20"]:
             thres=1
         else:
             iavg="daysum"
-            thres=0.001
+            thres=0.1
         print("Using threshold for "+str(ivar)+" :"+str(thres))
 
         # hamster file (*_n_part variable)
