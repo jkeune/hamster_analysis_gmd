@@ -60,7 +60,7 @@ Rscript 18_E2P_origin.r
 ```
 
 Some scripts require additional geographical data sets for plotting (i.e., coastlines). The corresponding scripts to download these data sets are available in  
-````bash
+```bash
 ./data/staticdata
 ```
 
