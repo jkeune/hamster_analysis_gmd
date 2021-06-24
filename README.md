@@ -9,7 +9,7 @@ The following section briefly describes the data required to run the analysis an
 ### Data 
 The analysis is based on three types of data sets: 
 1. **FLEXPART-ERA-Interim simulations.** Due to the large amount of data (>30TB in a compressed format), this data is only available upon request. The output of these simulations is used to run 'HAMSTER' (https://github.com/h-cel/hamster). Details on the setting of HAMSTER are described in the Supplementary Material of the manuscript and in `SETUPS_experiments.txt`.
-2. **Outputs of HAMSTER.** The post-processed outputs from HAMSTER are available on Zenodo: These data sets are required to create the figures embedded in the manuscript.  
+2. **Outputs of HAMSTER.** The post-processed outputs from HAMSTER are available on Zenodo: http://doi.org/10.5281/zenodo.5025802. These data sets are required to create the figures embedded in the manuscript.  
 3. **Reference and static data sets.** Additional data sets, such as ERA-Interim for the validation, and geographic data, such as coastlines for plotting, are required. Scripts to download these data sets are available in `.data/erainterim` and `./data/staticdata`. 
 
 ### Scripts
@@ -45,7 +45,7 @@ python 06_validation_stats_global.py
 ```
 and uses the post-processed outputs from the previous steps. 
 
-The post-processed outputs and the validation files are available via Zenodo: XXXX. 
+The post-processed outputs and the validation files are available via Zenodo: 10.5281/zenodo.5025802.
 
 The figures of the manuscript are created using R and use the above mentioned post-processed outputs: 
 ```bash
@@ -71,7 +71,7 @@ Jessica Keune (jessica.keune@ugent.be)
 ### References
 If you use scripts or data from this repository in a publication, please add a link to this repository to the Acknowledgements and cite the following references:
 - Keune, J., D. L. Schumacher, D. G. Miralles: A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model.
-- Keune, J., D. L. Schumacher, D. G. Miralles: Datasets for "A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model", Zenodo. 
+- Keune, J., D. L. Schumacher, D. G. Miralles: Datasets for "A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model", Zenodo. http://doi.org/10.5281/zenodo.5025802.
 
 ### License
 Copyright 2021 Jessica Keune, Dominik L. Schumacher, Diego G. Miralles. 
