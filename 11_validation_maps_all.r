@@ -18,9 +18,9 @@ hthres	= 1
 mthres	= 0.1
 
 # paths
-opath 	= "./figures"
-ipath 	= "./data/hamster/postpro/" 
-spath 	= "./data/hamster/staticdata/" 
+opath 	= "figures"
+ipath 	= "data/postpro/" 
+spath 	= "data/staticdata/" 
 
 # Functions
 source("functions/rotate.r")
@@ -54,7 +54,7 @@ for (expid in expids){
     for (ivar in c("P","E","H")){
       if (ivar=="H"){ithresh=hthres}else{ithresh=mthres}
       if (ivar=="P"){iexpid="ALLPBL"}else{iexpid=expid}
-      ifile = paste(ipath,"/validation/global/",ivar,"_",iexpid,"_daily_",syyyy,"-",eyyyy,"_all_thresh-",ithresh,".nc", sep="")
+      ifile = paste(ipath,"validation/global/",ivar,"_",iexpid,"_daily_",syyyy,"-",eyyyy,"_all_thresh-",ithresh,".nc", sep="")
       valdata[[ivar]] = readnc_validationmean(ifile, ret="data")
     }
   

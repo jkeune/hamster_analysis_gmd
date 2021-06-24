@@ -6,4 +6,4 @@ download.file("http://www.naturalearthdata.com/http//www.naturalearthdata.com/do
 
 # unzip the file
 unzip(zipfile = "coastlines.zip", 
-      exdir = 'ne-coastlines-10m')
+      exdir = 'coastlines')

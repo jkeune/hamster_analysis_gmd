@@ -23,9 +23,9 @@ cities  = c(1001,3001,5002)
 rr      = 1.5 # grid box around city: +-1 (+0.5 for the grid cell)
 
 ## paths
-opath  	= "./figures"
-ipath 	= "./data/hamster/postpro/" 
-spath 	= "./data/hamster/staticdata/" 
+opath  	= "figures"
+ipath 	= "data/postpro/" 
+spath 	= "data/staticdata/" 
 
 # colors and breaks
 ccol    = "black"
@@ -89,7 +89,7 @@ for (icity in as.character(cities)){
     iipath=sprintf("%s/%s/%s",ipath,icity,iexp)
     ifile=sprintf("%s/%s_biascor-attr_%s_%s_%s-%s_mean.nc",iipath,icity,iexpid,iexp,syyyy,eyyyy)
     idata     = list()
-    for (ivar in c("E2P","E2P_Es","E2P_Ps","E2P_EPs")){
+    for (ivar in c("E2P","E2P_Ps","E2P_EPs")){
       idata[[ivar]]   = ncvar_get(nc_open(ifile),ivar)
     }
   attdata[[icity]][[iexpid]][[iexp]]  = idata  
