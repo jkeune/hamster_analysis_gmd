@@ -20,9 +20,11 @@ cities  = c(1001,3001,5002)
 imean   = "bwmean"
 
 ## paths
-opath 	= "./figures"
-ipath 	= "./data/hamster/postpro/" 
-spath 	= "./data/hamster/staticdata/" 
+opath 	= "figures"
+ipath 	= "data/postpro/" 
+spath 	= "data/staticdata/" 
+erafile = paste(spath,"/eafc_1x1.nc",sep="")
+areafile= paste(spath,"/areas_1x1.nc",sep="")
 
 # additional functions
 source("functions/mask3dfield.r")
@@ -54,7 +56,7 @@ for (icity in as.character(cities)){
       iipath=sprintf("%s/%s/%s",ipath,icity,iexp)
       ifile=sprintf("%s/%s_biascor-attr_%s_%s_%s-%s_%s.nc",iipath,icity,iexpid,iexp,syyyy,eyyyy,imean)
       idata     = list()
-      for (ivar in c("E2P","E2P_Es","E2P_Ps","E2P_EPs")){
+      for (ivar in c("E2P","E2P_Ps","E2P_EPs")){
         # multiply with areas already ( to be able to sum contribution up... )
         idata[[ivar]]   = ncvar_get(nc_open(ifile),ivar)*areas3d
       }
