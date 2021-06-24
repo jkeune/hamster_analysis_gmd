@@ -1,8 +1,7 @@
-readnc_validationmean = function(ifilename="",ipath="",ret="data"){
+readnc_validationmean = function(ifile,ret="data"){
 
     # get filename
-	ifile	= sprintf("%s/%s",ipath,ifilename)
-    print(sprintf("%s",ifile))
+    	print(sprintf("%s",ifile))
 
 	if(!file.exists(ifile))	next 
   	# read data
