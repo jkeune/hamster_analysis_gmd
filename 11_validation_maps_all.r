@@ -15,7 +15,7 @@ syyyy	= 1980
 eyyyy	= 2016
 expids 	= c("RH-10-20")
 hthres	= 1
-mthres	= 0.01
+mthres	= 0.1
 
 # paths
 opath 	= "./figures"
