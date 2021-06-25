@@ -1,6 +1,8 @@
 # hamster_analysis_gmd
 This repository contains the analysis scripts for the GMD manuscript "A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model" by Jessica Keune, Dominik L. Schumacher and Diego G. Miralles (Hydro-Climate Extremes Laboratory, Ghent University, Belgium). The analysis is based on the output of the 'Heat And MoiSture Tracking framEwoRk' [HAMSTER](https://github.com/h-cel/hamster). 
 
+[![DOI](https://zenodo.org/badge/379674987.svg)](https://zenodo.org/badge/latestdoi/379674987)
+
 - - - -
 ## Description of this repository
 
