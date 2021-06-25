@@ -46,6 +46,11 @@ python 06_validation_stats_global.py
 and uses the post-processed outputs from the previous steps. 
 
 The post-processed outputs and the validation files are available via [Zenodo](https://doi.org/10.5281/zenodo.5025802).
+These can be downloaded directly using 
+```bash
+./00_get_zenodo_data.sh
+```
+With these data sets, all figures can be reproduced. 
 
 The figures of the manuscript are created using R and use the above mentioned post-processed outputs: 
 ```bash
