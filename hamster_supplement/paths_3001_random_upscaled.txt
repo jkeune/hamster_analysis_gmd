@@ -22,5 +22,5 @@ path_f2t_traj = "./data/hamster/3001/00_f2t"
 
 # paths for processed data
 path_diag = "./data/hamster/global/diagnosis"
-path_attr = "./data/hamster/3001/02_attr/random_upscaled"
-path_bias = "./data/hamster/3001/03_bias/random_upscaled"
+path_attr = "./data/hamster/3001/02_attr/random2_upscaled"
+path_bias = "./data/hamster/3001/03_bias/random2_upscaled"
