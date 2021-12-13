@@ -54,12 +54,8 @@ do
         qsub -v expid=$expid,process_diag_data=FALSE,process_traj_data=TRUE,icity=$icity,iexp="linear_upscaled" 04_postpro_hamster.sh
         sleep 5
 
-        echo "    * random, no upscaling"
-        qsub -v expid=$expid,process_diag_data=FALSE,process_traj_data=TRUE,icity=$icity,iexp="random" 04_postpro_hamster.sh
-        sleep 5
-
         echo "    * random, upscaling"
-        qsub -v expid=$expid,process_diag_data=FALSE,process_traj_data=TRUE,icity=$icity,iexp="random_upscaled" 04_postpro_hamster.sh
+        qsub -v expid=$expid,process_diag_data=FALSE,process_traj_data=TRUE,icity=$icity,iexp="random2_upscaled" 04_postpro_hamster.sh
         sleep 5
 
     done
