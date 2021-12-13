@@ -8,6 +8,7 @@ library(abind)
 library(RColorBrewer)
 library(rgdal)
 library(rworldmap)
+library(raster)
 library(sp)
 
 ##----------------------------------------------------------------
@@ -18,7 +19,7 @@ syyyy	= 1980
 eyyyy	= 2016
 expids  = c("RH-10-20","SOD08-SCH19","ALLPBL","FAS19")
 cexpids = c("RH-20","SOD08","ALL-ABL","FAS19")
-exps    = c("linear","linear_upscaled","random","random_upscaled")
+exps    = c("linear_upscaled","random2_upscaled")
 cities  = c(1001,3001,5002)
 rr      = 1.5 # grid box around city: +-1 (+0.5 for the grid cell)
 
@@ -29,10 +30,8 @@ spath 	= "data/staticdata/"
 
 # colors and breaks
 ccol    = "black"
-mybrs   = c(seq(0,0.9,0.1),seq(1,9,1),seq(10,30,10))
-mycols  = colorRampPalette(brewer.pal("PuBuGn",n=9))(length(mybrs)-1)
-mybrs2  = c(seq(0,9.5,0.5),seq(10,25,1))
-mycols2 = colorRampPalette(brewer.pal("OrRd",n=9))(length(mybrs2)-1)
+ibreaks = c(seq(0,0.9,0.1),seq(1,10,1),20,30)
+icols   = c(colorRampPalette(c("white",brewer.pal("PuBu",n=9)))(length(ibreaks)-3),brewer.pal("RdPu",n=9)[8:7])
 
 # additional functions
 source("functions/mask2dfield.r")
@@ -126,11 +125,6 @@ for (icity in as.character(cities)){
   xrange  = gdata[[icity]]$xrange
   yrange  = gdata[[icity]]$yrange
   
-  # breaks and colors...
-  ibreaks  = c(seq(0,0.9,0.1),seq(1,10,1),20,30)
-  icols    = colorRampPalette(brewer.pal("PuBu",n=9))(length(ibreaks)-1)
-  
-  
   ## PLOT: one pdf for each exps (linear, linear_upscaled, ...)
   for (iexp in exps){
   
@@ -157,6 +151,14 @@ for (icity in as.character(cities)){
               scoastlines=coastlines)
       plotcity(xc=clon,yc=clat,rr=rr,ccol=ccol)
       legend("topleft",paste(letters[i],".",sep=""),bty="n",text.font=2,cex=2.75)
+      # 1-mm-precipitationshed
+      pval    = 1 #mm year-1
+      ished   = (itoplot>=pval)+0
+      mydf    = subset(data.frame(x=c(alon),y=c(alat),z=c(ished)),z==1)
+      myrast  = rasterFromXYZ(mydf,crs=CRS("+proj=longlat +ellps=WGS84 +datum=WGS84"))
+      pshed   = aggregate(rasterToPolygons(myrast, n=4, na.rm=TRUE, digits=12, dissolve=FALSE),by="z")
+      lines(pshed,col="grey30",lwd=1.75)
+      #
       i=i+1
       }
     }
