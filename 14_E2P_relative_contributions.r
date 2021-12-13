@@ -15,7 +15,7 @@ syyyy	= 1980
 eyyyy	= 2016
 expids  = c("RH-10-20","SOD08-SCH19","ALLPBL","FAS19")
 cexpids = c("RH-20","SOD08","ALL-ABL","FAS19")
-exps    = c("linear","linear_upscaled","random","random_upscaled")
+exps    = c("linear_upscaled","random2_upscaled")
 cities  = c(1001,3001,5002)
 imean   = "bwmean"
 
@@ -152,7 +152,7 @@ iexpid="RH-10-20"
 ivar="E2P_EPs"
 plotinit()
 i=1
-for (iexp in c("linear_upscaled","random_upscaled")){
+for (iexp in c("linear_upscaled","random2_upscaled")){
   # sum over all cities to get city-independent relative contributions
   itotal = 0
   icontr = rep(0,16)
