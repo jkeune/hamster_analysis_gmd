@@ -82,10 +82,6 @@ do
         pfile="paths_${icity}_linear_upscaled.txt"
         qsub -t $syyyy-$eyyyy -v $isettings,mval=$icity,pathfile=$pfile job_hamster_traj_linear_upscaled.sh
 
-        echo "    * random, no upscaling"
-        pfile="paths_${icity}_random.txt"
-        qsub -t $syyyy-$eyyyy -v $isettings,mval=$icity,pathfile=$pfile job_hamster_traj_random.sh
-
         echo "    * random, upscaling"
         pfile="paths_${icity}_random_upscaled.txt"
         qsub -t $syyyy-$eyyyy -v $isettings,mval=$icity,pathfile=$pfile job_hamster_traj_random_upscaled.sh
