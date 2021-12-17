@@ -131,9 +131,9 @@ convertlist2str=function(mystring){
   # expid
   if (grepl("RH-10-20",mystring)){
     if (grepl("linear",mystring)){
-      out = expression("RH-10; linear")
+      out = expression("RH-20; linear")
     }else if (grepl("random",mystring)){
-      out = expression("RH-10; random")
+      out = expression("RH-20; random")
     }
   }else if (grepl("FAS19",mystring)){
     if (grepl("linear",mystring)){
