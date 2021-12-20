@@ -10,8 +10,8 @@ The following section briefly describes the data required to run the analysis an
 
 ### Data 
 The analysis is based on three types of data sets: 
-1. **FLEXPART-ERA-Interim simulations.** Due to the large amount of data (>30TB in a compressed format), this data is only available upon request. The output of these simulations is used to run [HAMSTER](https://github.com/h-cel/hamster). Details on the setting of HAMSTER are described in the Supplementary Material of the manuscript and in `SETUPS_experiments.txt`.
-2. **Outputs of HAMSTER.** The post-processed outputs from HAMSTER are available on [Zenodo](http://doi.org/10.5281/zenodo.5025802). These data sets are required to create the figures embedded in the manuscript.  
+1. **FLEXPART-ERA-Interim simulations.** Due to the large amount of data (>30TB in a compressed format), this data is only available upon request. The output of these simulations is used to run [HAMSTER](https://github.com/h-cel/hamster); the exact version used in this analysis is tagged 'v1.2.0' and is archived on [Zenodo](https://doi.org/10.5281/zenodo.5788506). Details on the setting of HAMSTER are described in the Supplementary Material of the manuscript and in `SETUPS_experiments.txt`.
+2. **Outputs of HAMSTER.** The post-processed outputs from HAMSTER are available on [Zenodo](http://doi.org/10.5281/zenodo.5793038). These data sets are required to create the figures embedded in the manuscript.  
 3. **Reference and static data sets.** Additional data sets, such as ERA-Interim for the validation, and geographic data, such as coastlines for plotting, are required. Scripts to download these data sets are available in `.data/erainterim` and `./data/staticdata`. 
 
 ### Scripts
@@ -47,7 +47,7 @@ python 06_validation_stats_global.py
 ```
 and uses the post-processed outputs from the previous steps. 
 
-The post-processed outputs and the validation files are available via [Zenodo](https://doi.org/10.5281/zenodo.5025802).
+The post-processed outputs and the validation files are available via [Zenodo](https://doi.org/10.5281/zenodo.5793038).
 These can be downloaded directly using 
 ```bash
 ./00_get_zenodo_data.sh
@@ -76,10 +76,11 @@ Some scripts require additional geographical data sets for plotting (i.e., coast
 Jessica Keune (jessica.keune@ugent.be)
 
 ### References
-If you use scripts or data from this repository in a publication, please add a link to this repository to the Acknowledgements and cite the following references:
-- Keune, J., D. L. Schumacher, D. G. Miralles (manuscript submitted): A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model.
-- Keune, J., D. L. Schumacher, D. G. Miralles (2021, June 24): Datasets for "A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model", Zenodo. http://doi.org/10.5281/zenodo.5025802.
-- Keune, J., D. L. Schumacher, D. G. Miralles (2021, June 1): h-cel/hamster: Public release of HAMSTER (Version v1.0.0). Zenodo. http://doi.org/10.5281/zenodo.4889311
+If you use scripts or data from this repository in a publication, please cite the following references:
+- Keune, J., Schumacher, D. L., and Miralles, D. G.: A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model, Geosci. Model Dev. Discuss. [preprint], https://doi.org/10.5194/gmd-2021-180, in review, 2021.
+- Keune, Jessica, Schumacher, Dominik L., & Miralles, Diego G. (2021). HAMSTER v.1.2.0: Heat- And MoiSture Tracking framEwoRk (h-cel/hamster). In Geoscientific Model Development Discussions (1.2.0). Zenodo. https://doi.org/10.5281/zenodo.5788506
+- Keune, Jessica, Schumacher, Dominik L., & Miralles, Diego G. (2021). Datasets for "A holistic framework to estimate the origins of atmospheric moisture and heat using a Lagrangian model" (v1.2.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5793038
+
 
 ### License
 Copyright 2021 Jessica Keune, Dominik L. Schumacher, Diego G. Miralles. 
